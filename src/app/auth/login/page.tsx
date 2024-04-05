@@ -19,32 +19,32 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
-const onsubmit: SubmitHandler<Inputs> = async (data) => {
-  try {
-    await signInWithEmailAndPassword(auth, data.email, data.password);
-    router.push("/");
-  } catch (error) {
-    console.error(error);
+  const onsubmit: SubmitHandler<Inputs> = async (data) => {
+    try {
+      await signInWithEmailAndPassword(auth, data.email, data.password);
+      router.push("/");
+    } catch (error) {
+      console.error(error);
 
-    if ('code' in error) {
-      switch (error.code) {
-        case "auth/wrong-password":
-          alert("パスワードが間違っています");
-          break;
-        case "auth/user-not-found":
-          alert("ユーザーが見つかりません");
-          break;
-        case "auth/invalid-credential":
-          alert("無効な認証情報です。入力内容を確認してください");
-          break;
-        default:
-          alert("エラーが発生しました: " + error.code);
+      if ("code" in error) {
+        switch (error.code) {
+          case "auth/wrong-password":
+            alert("パスワードが間違っています");
+            break;
+          case "auth/user-not-found":
+            alert("ユーザーが見つかりません");
+            break;
+          case "auth/invalid-credential":
+            alert("無効な認証情報です。入力内容を確認してください");
+            break;
+          default:
+            alert("エラーが発生しました: " + error.code);
+        }
+      } else {
+        alert("エラーが発生しました");
       }
-    } else {
-      alert("エラーが発生しました");
     }
-  }
-};
+  };
 
   return (
     <div className="h-screen flex flex-col items-center justify-center">
@@ -104,9 +104,7 @@ const onsubmit: SubmitHandler<Inputs> = async (data) => {
           </button>
         </div>
         <div className="mt-4">
-          <span className="text-gray-600 text-sm">
-            はじめての方はこちら
-          </span>
+          <span className="text-gray-600 text-sm">はじめての方はこちら</span>
           <Link
             href={"/auth/register"}
             className="text-blue-500 text-sm hover:text-blue-700"
