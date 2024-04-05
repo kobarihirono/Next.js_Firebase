@@ -1,36 +1,108 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# プロジェクト名
 
-## Getting Started
+AI Forum
 
-First, run the development server:
+## chat-app
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+ChatGPTの利便性をさらに高めるWebアプリです。
+AIの使い方を共有トークルームから学んだり、見返したいトークルームを保存することができます。
+
+## 機能一覧
+
+- **認証機能**
+
+  - 新規会員登録
+  - ログイン
+  - ログアウト
+  - パスワード再設定
+
+- **チャット画面**
+
+  - 新規チャットルームの作成
+  - AIとの会話、トーク内容などのルーム情報の保持
+  - 登録メールアドレスの表示
+  - トークルームの公開設定
+
+- **タイムライン**
+
+  - AIをうまく活用できたトークルームの共有
+  - 関心のあるトークルームのお気に入り登録
+  - 活用例の検索
+
+- **マイページ**
+
+  - お気に入り一覧
+  - 共有しているトークルーム一覧
+  - トークルームの非公開設定
+
+## 使用技術
+
+このプロジェクトでは以下の技術を使用しています
+
+- **使用言語**
+
+  - HTML
+  - CSS
+  - Javascript
+
+- **ライブラリ**
+
+  - Tailwind CSS
+  - React
+
+- **フレームワーク**
+
+  - Next.js
+
+- **DB**
+
+  - Firestore
+
+- **認証**
+
+  - Firebase Authentication
+
+- **テスト**
+
+  - Jest
+  - React Testing Library
+
+- **エディタ**
+
+  - VisualStudio Code
+
+- **ホスティング**
+  - Firebase
+
+## src ファイル構成
+
+```plaintext
+scr/
+|
+|-- app/ # サイト全体のページ構造
+|   |-- types # 型設定ファイルを格納
+|   |--
+|   |--
+|
+|-- components/ # 再利用可能な UI コンポーネント
+|   |-- Buttons/ # ボタンを格納するファイル
+|   |    |-- AuthButton.tsx # 認証に使用するボタン
+|   |    |-- ...
+|   |-- ...
+|
+|
+|-- lib/ # カスタムフックやfirebaseのconfigなどを格納
+|   |-- apis # firebase関連のapi
+|   |-- hooks # カスタムフック
+|   |-- ...
+|
+|-- context/ # グローバルに使用する値を管理
+|   |-- AppContext.tsx # 認証関連の値を保持
+|   |-- ...
+|
+`-- ...
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## テスト
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### テスト仕様書
